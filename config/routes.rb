@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :meals
   root 'static_pages#home'
   get  '/about',   to: 'static_pages#about'
 	devise_scope :user do
