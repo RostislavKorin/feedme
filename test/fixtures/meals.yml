@@ -2,6 +2,10 @@
 
 one:
   name: MyString
+  description: very long description
+  price: 12
+  weight: 2
+  
 
 two:
   name: MyString
