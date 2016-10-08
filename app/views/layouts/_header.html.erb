@@ -7,6 +7,7 @@
             <li><%= link_to "About",   about_path %></li>
             <% if user_signed_in?%>
 				<li><%= link_to "Sign out", sign_out_path %></li>
+        <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
         <li><%= link_to 'Edit Profile',edit_path %></li>
             <% else %>
             	<li><%= link_to "Log in", sign_in_path %></li> 

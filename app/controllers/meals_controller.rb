@@ -1,6 +1,6 @@
 class MealsController < ApplicationController
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:create, :destroy]
   # GET /meals
   # GET /meals.json
   def index
@@ -25,7 +25,7 @@ class MealsController < ApplicationController
   # POST /meals.json
   def create
     @meal = Meal.new(meal_params)
-
+    @meal = current_user.meals.build(meal_params)
     respond_to do |format|
       if @meal.save
         format.html { redirect_to @meal, notice: 'Meal was successfully created.' }
