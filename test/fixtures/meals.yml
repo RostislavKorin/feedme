@@ -5,6 +5,8 @@ one:
   description: very long description
   price: 12
   weight: 2
+  user_id: 4
+  
   
 
 two:
