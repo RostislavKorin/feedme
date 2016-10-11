@@ -1,3 +1,12 @@
 <%= @user.full_name%>
 
 <%= @user.email%>
+<div class="span8">
+    <% if @user.meals.any? %>
+      <h3>Meals (<%= @user.meals.count %>)</h3>
+      <ol class="meals">
+        <%= render 'meals/meals' %>
+      </ol>
+      <%= will_paginate @meals %>
+    <% end %>
+  </div>

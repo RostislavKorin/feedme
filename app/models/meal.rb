@@ -4,4 +4,5 @@ class Meal < ApplicationRecord
 	validates :description, presence: true, length: { maximum: 200 }
 	validates :price, presence: true
 	validates :weight, presence: true
+	validates :name, presence: true
 end

@@ -1,11 +1,15 @@
-<h1>FeedMe</h1>
-<h2>Find a chef or become their own</h2>
-
-<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary active">
-    <input type="radio" name="options" id="option1" checked> Freelancer
-  </label>
-  <label class="btn btn-primary">
-    <input type="radio" name="options" id="option2"> Agency
-  </label>
+<div class="container-fluid ">
+	<div class="row">
+		<div class="col-lg-5 col-centered">
+			<h1>FeedMe</h1>
+			<% if user_signed_in?%>
+				<%= link_to "New meal", new_meal_url, class: "btn btn-default btn-lg" %>
+				<%= link_to "My meals", current_user, class: "btn btn-default btn-lg" %>
+            <% else %>
+				<h2>Find a chef or become their own</h2>
+				<%= link_to "I need some food", meals_url, class: "btn btn-default btn-lg" %>
+				<%= link_to "I want to cook", sign_up_url, class: "btn btn-default btn-lg" %>
+            <% end %>
+		</div>
+	</div>
 </div>
