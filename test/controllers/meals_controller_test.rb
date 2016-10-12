@@ -45,6 +45,7 @@ class MealsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update meal" do
     patch meal_url(@meal), params: { meal: { name: @meal.name, description: @meal.description, price: @meal.price, weight: @meal.weight, user_id: @meal.user_id} }
+    #assert_redirected_to meal_url(@meal)
   end
 
   test "should redirect destroy when not logged in" do
