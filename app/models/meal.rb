@@ -1,8 +1,10 @@
 class Meal < ApplicationRecord
 	belongs_to :user
 	validates :user_id, presence: true
-	validates :description, presence: true, length: { maximum: 200 }
+	validates :description, presence: true
 	validates :price, presence: true
 	validates :weight, presence: true
 	validates :name, presence: true
+	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png"
+ 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 end

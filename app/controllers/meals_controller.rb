@@ -4,7 +4,7 @@ class MealsController < ApplicationController
   # GET /meals
   # GET /meals.json
   def index
-    @meals = Meal.all
+    @meals = Meal.paginate(:page => params[:page], :per_page => 50)
   end
 
   # GET /meals/1
@@ -69,6 +69,6 @@ class MealsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meal_params
-      params.require(:meal).permit(:name, :description, :weight, :price)
+      params.require(:meal).permit(:name, :description, :weight, :price, :image)
     end
 end

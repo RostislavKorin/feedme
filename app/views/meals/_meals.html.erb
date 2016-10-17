@@ -1,13 +1,9 @@
-<li>
-  <span class="content">
-<% @meals.each do |meal| %>
-	<td><%= meal.name%></td>
-	<td>Posted <%= time_ago_in_words(meal.created_at) %> ago.</td>
-   	<td><%= link_to 'Edit', edit_meal_path(meal) %></td>
-    <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% @meals.each do |meal| %></li>
+	<li><%= image_tag meal.image.url(:thumb) %>
+	<%= meal.name%>
+	posted <%= time_ago_in_words(meal.created_at) %> ago.
+  <%= link_to 'Edit', edit_meal_path(meal) %>
+  <%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></li>
 <%end%>
-  </span>
-  <span class="timestamp">
-    
-  </span>
-</li>
+ 
+ 

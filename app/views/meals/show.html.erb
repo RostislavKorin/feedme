@@ -1,9 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @meal.name %>
-</p>
+<ul>
+	<%= image_tag @meal.image.url(:medium) %>
+	<li>Name:<%= @meal.name %></li>
+	<li>Weight:<%= @meal.weight %></li>
+	<li>Price:<%= @meal.price %></li>
+	<li>Description:<%= @meal.description %></li>
+</ul>
 
 <%= link_to 'Edit', edit_meal_path(@meal) %> |
 <%= link_to 'Back', meals_path %>

@@ -11,11 +11,30 @@ User.create!(full_name:  "Example User",
              password_confirmation: "foobar")
 
 99.times do |n|
-  name  = Faker::Name.name
+  name  = Faker::GameOfThrones.character
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(full_name:  name,
                email: email,
                password:              password,
                password_confirmation: password)
+end
+
+Meal.create!(name:  "Example Meal",
+             description: "example description",
+             price:              3,
+             weight: 1,
+             user_id: Random.rand(100))
+
+1000.times do |n|
+  name  = Faker::Lorem.words(2)
+  description = Faker::Lorem.paragraphs(rand(2..8))
+  weight = Random.rand(100)
+  price = Random.rand(100)
+  user_id = Random.rand(1...100)
+  Meal.create!(name:  name,
+               description: description,
+               price:              price,
+               weight: weight,
+               user_id: user_id)
 end
